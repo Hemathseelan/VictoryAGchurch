@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import 'aos/dist/aos.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Make website content wider on all pages */
+.max-w-7xl {
+  max-width: 1400px !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1E293B;
+  background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Fraunces', serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #0B3C91;
+  border-radius: 10px;
+}
+
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #C99A1F;
+}
+
+.divider-ray {
+  position: relative;
+  height: 2px;
+  width: 64px;
+  background: linear-gradient(90deg, #F4C542, transparent);
+}
+
+.glass {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
