@@ -139,7 +139,7 @@ export default function Watch() {
     Previous Services
   </h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+ <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
     {previousSermons.map((sermon, index) => (
       <div
         key={index}
@@ -148,15 +148,15 @@ export default function Watch() {
         <img
          src={getYouTubeThumbnail(sermon.youtubeUrl)}
           alt={sermon.title}
-          className="w-full h-48 object-cover"
+         className="w-full h-32 sm:h-48 object-cover"
         />
 
-        <div className="p-5">
-          <h3 className="font-semibold text-lg mb-2">
+        <div className="p-3 sm:p-5">
+         <h3 className="font-semibold text-sm sm:text-lg mb-2 leading-snug">
             {sermon.title}
           </h3>
 
-          <p className="text-sm text-gray-500 mb-4">
+     <p className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">
             {sermon.date}
           </p>
 
@@ -164,7 +164,7 @@ export default function Watch() {
             href={sermon.youtubeUrl}
             target="_blank"
             rel="noreferrer"
-            className="bg-blue-700 text-white px-4 py-2 rounded-lg inline-block hover:bg-blue-800"
+           className="bg-blue-700 text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg inline-block hover:bg-blue-800"
           >
             ▶ Watch Now
           </a>

@@ -8,11 +8,44 @@ export default function MonthlyVerse() {
   const [monthlyVerse, setMonthlyVerse] = useState(null);
 
   useEffect(() => {
-    const verseRef = ref(database, "monthlyVerse");
+    const verseRef = ref(database, "monthlyVerses");
 
     const unsubscribe = onValue(verseRef, (snapshot) => {
       if (snapshot.exists()) {
-        setMonthlyVerse(snapshot.val());
+        const verses = snapshot.val();
+
+        const monthOrder = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        // Current month
+        const currentMonth =
+          monthOrder[new Date().getMonth()];
+
+        // Get current month's verse
+        if (verses[currentMonth]) {
+          setMonthlyVerse({
+            ...verses[currentMonth],
+            month:
+              verses[currentMonth].month ||
+              currentMonth,
+          });
+        } else {
+          setMonthlyVerse(null);
+        }
+      } else {
+        setMonthlyVerse(null);
       }
     });
 
@@ -36,7 +69,10 @@ export default function MonthlyVerse() {
         {/* Bible Icon */}
         <div className="flex justify-center mb-5">
           <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center">
-            <FaBookBible className="text-gold-deep" size={22} />
+            <FaBookBible
+              className="text-gold-deep"
+              size={22}
+            />
           </div>
         </div>
 
@@ -52,8 +88,14 @@ export default function MonthlyVerse() {
           </p>
 
           <motion.blockquote
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{
+              opacity: 0,
+              scale: 0.97,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="font-display text-xl sm:text-2xl lg:text-3xl leading-snug text-primary-dark"
@@ -76,10 +118,19 @@ export default function MonthlyVerse() {
           </p>
 
           <motion.blockquote
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{
+              opacity: 0,
+              scale: 0.97,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+            }}
             className="font-display text-xl sm:text-2xl lg:text-3xl leading-snug text-primary-dark"
           >
             "{monthlyVerse.englishText}"

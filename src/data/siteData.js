@@ -143,7 +143,7 @@ export const galleryCategories = [
   "All",
   "Sunday Service",
   "Youth",
-  "Children",
+  "Sunday School",
   "Christmas",
   "New Year",
   "Convention",
@@ -183,18 +183,24 @@ export const galleryImages = [
     category: "Sunday Service",
     src: "/gallery/church4.mp4",
   },
-  // {
-  //   id: 5,
-  //   type: "video",
-  //   category: "Youth",
-  //   src: "/gallery/youth.mp4",
-  // },
-  // {
-  //   id: 6,
-  //   type: "image",
-  //   category: "Children",
-  //   src: "/gallery/children1.jpg",
-  // },
+  {
+    id: 5,
+    type: "image",
+    category: "Sunday School",
+    src: "/gallery/ss1.jpg",
+  },
+  {
+    id: 6,
+    type: "image",
+    category: "Sunday School",
+    src: "/gallery/ss2.jpg",
+  },
+  {
+    id: 7,
+    type: "image",
+    category: "Sunday Service",
+    src: "/gallery/sse1.jpg",
+  },
 ];
 
 export const timeline = [

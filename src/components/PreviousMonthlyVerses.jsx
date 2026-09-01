@@ -36,15 +36,19 @@ export default function PreviousMonthlyVerses() {
   ];
 
   // Current month
-  const currentMonth = monthOrder[new Date().getMonth()];
+  const currentMonth =
+    monthOrder[new Date().getMonth()];
 
   // Get previous months and show only latest 4
   const previousMonths = Object.keys(verses)
     .filter((month) => month !== currentMonth)
-    .filter((month) => monthOrder.includes(month))
+    .filter((month) =>
+      monthOrder.includes(month)
+    )
     .sort(
       (a, b) =>
-        monthOrder.indexOf(b) - monthOrder.indexOf(a)
+        monthOrder.indexOf(b) -
+        monthOrder.indexOf(a)
     )
     .slice(0, 4);
 
@@ -71,7 +75,9 @@ export default function PreviousMonthlyVerses() {
                   key={month}
                   onClick={() =>
                     setSelectedMonth(
-                      selectedMonth === month ? null : month
+                      selectedMonth === month
+                        ? null
+                        : month
                     )
                   }
                   className={`
@@ -159,6 +165,7 @@ export default function PreviousMonthlyVerses() {
 
           </motion.div>
         )}
+
       </div>
     </section>
   );

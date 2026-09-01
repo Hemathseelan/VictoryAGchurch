@@ -1,6 +1,15 @@
 export default function PageHero({ eyebrow, title, subtitle, image }) {
   return (
-    <section className="relative h-[52vh] min-h-[380px] flex items-center overflow-hidden">
+   <section
+  className="
+    relative
+    h-[240px]
+    sm:h-[280px]
+    lg:h-[320px]
+    flex items-center
+    overflow-hidden
+  "
+>
       <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-navy-gradient" />
       <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-10 w-full pt-16">

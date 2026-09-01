@@ -3,13 +3,12 @@ import { FaPlay } from "react-icons/fa6";
 import { churchInfo } from "../data/siteData";
 
 export default function Hero() {
-  return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      <img
-        src="/gallery/hero.jpg"
-        alt="Congregation worshipping together"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+  return (<section className="relative min-h-[520px] sm:min-h-[650px] lg:min-h-[85vh] flex items-center overflow-hidden">
+    <img 
+  src="/gallery/hero.jpg" 
+  alt="Congregation worshipping together" 
+  className="absolute inset-0 w-full h-full object-cover object-center"
+/>
    <div className="absolute inset-0 bg-primary-dark/40" />
       {/* signature radiant motif */}
       <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-radiant animate-sunray" />
