@@ -9,7 +9,7 @@ import ScrollProgress from "./components/ScrollProgress";
 import BackToTop from "./components/BackToTop";
 import FloatingButtons from "./components/FloatingButtons";
 import Loader from "./components/Loader";
-
+import Ministries from "./pages/Ministries";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Locations from "./pages/Locations";
@@ -55,6 +55,7 @@ useEffect(() => {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
+      <Route path="/ministries" element={<Ministries />} />
         </Routes>
       </main>
       <Footer />

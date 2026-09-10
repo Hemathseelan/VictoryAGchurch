@@ -3,7 +3,7 @@ import { pastor } from "../data/siteData";
 export default function PastorCard() {
   return (
     <div
-      className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-soft bg-white"
+      className="mt-16  grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-soft bg-white"
       data-aos="fade-up"
     >
       <div className="h-96 lg:h-auto">

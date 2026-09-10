@@ -9,7 +9,7 @@ export const churchInfo = {
   address: "10-A,Vallalar Nagar, Cuddalore N.T, Tamil Nadu, India",
   whatsapp: "91 98654 73252",
   social: {
-    facebook: "https://facebook.com",
+    facebook: "https://www.facebook.com/people/Victory-AG-prayer-centre/100069886593567/",
     instagram: "https://www.instagram.com/victory_ag_church_cuddalore?igsh=ZDA2ZXM0dGpuZmNk",
     youtube: "https://www.youtube.com/@VictoryAGChurchCuddalore",
     whatsapp: "https://wa.me/9865473252",
@@ -102,8 +102,8 @@ export const services = [
 
 iframe: "https://www.google.com/maps/embed?pb=!4v1785757755381!6m8!1m7!1so-lU5nhoQR4Cl4clFLWFWA!2m2!1d11.75929682051599!2d79.7599430507804!3f19.917753594206484!4f24.440341437097402!5f0.4000000000000002",
 
-    mapLink:
-      "https://maps.app.goo.gl/53b1ZyDGzP9y6FEHA",
+mapLink:
+  "https://www.google.com/maps/place/Victory+AG+Church/@11.7592968,79.7496434,15z/data=!4m6!3m5!1s0x3a54988d0919c719:0x63f8bbff7759a917!8m2!3d11.7593696!4d79.7599415!16s%2Fg%2F11b8tw_jr9?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D",
   
     timings: [
       { label: "Sunday Worship", time: "7:15 AM" },
@@ -114,7 +114,7 @@ iframe: "https://www.google.com/maps/embed?pb=!4v1785757755381!6m8!1m7!1so-lU5nh
   },
   {
     id: 2,
-    name: "AG Church House",
+    name: "AG Prayer House",
     address: "28, Annai Moogambigai Nagar, Koothapakkam, Cuddalore, Tamil Nadu",
     phone: "+91 998654 73252",
      iframe:
@@ -147,16 +147,10 @@ export const galleryCategories = [
   "Christmas",
   "New Year",
   "Convention",
-  "Outreach",
+  "Tech Team",
   "Women's Fellowship",
 ];
 
-const galleryPhotoIds = [
-  "1445445290350-18a3b86e0b5a", "1508898578281-774ac4893c0c", "1519452575417-564c1401ecc0",
-  "1438232992991-995b7058bbb3", "1544427920-c49ccfb85579", "1507692049790-de58290a4334",
-  "1478147427282-58a87a120781", "1517457373958-b7bdd4587205", "1523580494863-6f3031224c94",
-  "1543589077-47d81606c1bf", "1467810563316-b5476525c0f9", "1529070538774-1843cb3265df",
-];
 
 export const galleryImages = [
   {
@@ -200,6 +194,18 @@ export const galleryImages = [
     type: "image",
     category: "Sunday Service",
     src: "/gallery/sse1.jpg",
+  },
+   {
+    id: 8,
+    type: "image",
+    category: "Tech Team",
+    src: "/gallery/media.jpeg",
+  },
+  {
+    id: 9,
+    type: "image",
+    category: "Sunday Service",
+    src: "/gallery/work1.jpeg",
   },
 ];
 

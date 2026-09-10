@@ -57,19 +57,19 @@ export default function PreviousMonthlyVerses() {
     : null;
 
   return (
-    <section className="py-8 lg:py-10 bg-white">
+    <section className="py-8 lg:py-10 bg-cream">
       <div className="max-w-7xl mx-auto px-5 lg:px-10">
 
         {/* Previous Months */}
         {previousMonths.length > 0 && (
-          <div className="text-center">
+          <div className="text-center -mt-6">
 
             <p className="text-xs font-semibold tracking-[0.2em] text-primary/50 uppercase mb-4">
               Previous Months
             </p>
 
             {/* Month Buttons */}
-            <div className="flex flex-wrap justify-center gap-3">
+     <div className="flex flex-nowrap justify-center gap-3">
               {previousMonths.map((month) => (
                 <button
                   key={month}
@@ -113,7 +113,7 @@ export default function PreviousMonthlyVerses() {
               y: 0,
             }}
             transition={{ duration: 0.35 }}
-            className="mt-8 max-w-6xl mx-auto rounded-2xl bg-cream border border-primary/5 p-6 lg:p-8"
+           className="mt-8 max-w-6xl mx-auto rounded-2xl bg-cream border-2 border-amber-200 p-6 lg:p-8"
           >
 
             {/* Month */}

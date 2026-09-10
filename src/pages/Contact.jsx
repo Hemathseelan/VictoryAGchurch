@@ -30,12 +30,12 @@ export default function Contact() {
 
   {/* ================= VISIT US ================= */}
 
-<section className="py-16 lg:py-20 bg-white">
+<section className="py-8 lg:py-10 bg-white">
   <div className="max-w-7xl mx-auto px-5 lg:px-10">
 
     {/* Heading */}
     <div
-      className="text-center mb-10 lg:mb-14"
+      className="text-center mb-6 lg:mb-8"
       data-aos="fade-up"
     >
       <p className="eyebrow mb-3">
@@ -50,7 +50,7 @@ export default function Contact() {
 
     {/* IMAGE + INFO */}
     <div
-      className="grid lg:grid-cols-2 rounded-3xl overflow-hidden shadow-soft"
+      className="grid lg:py-0 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-soft"
       data-aos="fade-up"
     >
 
@@ -58,7 +58,7 @@ export default function Contact() {
 
       <div className="h-[320px] sm:h-[400px] lg:h-[520px]">
         <img
-          src="/gallery/con.jpeg"
+          src="/gallery/work.jpeg"
           alt="VICTORY A.G. CHURCH"
           className="w-full h-full object-cover object-center"
         />
@@ -213,80 +213,154 @@ export default function Contact() {
 
       {/* ================= JOIN US ================= */}
 
-      <section className="py-16 lg:py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10">
+<section className="py-8 lg:py-8 bg-surface">
+  <div className="max-w-7xl mx-auto px-5 lg:px-10">
 
-          {/* Heading */}
+    {/* Heading */}
 
-          <div
-            className="text-center mb-10 lg:mb-12"
-            data-aos="fade-up"
-          >
-            <p className="eyebrow mb-3">
-              Join Us
-            </p>
+    <div
+      className="text-center mb-6 lg:mb-8"
+      data-aos="fade-up"
+    >
+      <p className="eyebrow mb-3">
+        Join Us
+      </p>
 
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-primary-dark">
-              You Are Always Welcome
-            </h2>
-          </div>
-
-
-          {/* JOIN CONTENT */}
-
-          <div
-            className="grid lg:grid-cols-2 rounded-3xl overflow-hidden shadow-card"
-            data-aos="fade-up"
-          >
-
-            {/* CONTENT */}
-
-            <div className="bg-white p-8 sm:p-10 lg:p-14 flex items-center">
-
-              <div>
-
-                <h3 className="font-display text-2xl sm:text-3xl font-semibold text-primary-dark mb-5">
-                  JOIN CHURCH
-                </h3>
-
-                <p className="text-sm sm:text-base text-ink/70 leading-7">
-                  VICTORY A.G. CHURCH is a place where people
-                  come together to worship Jesus Christ, grow
-                  in faith, and encourage one another.
-                </p>
-
-                <p className="mt-4 text-sm sm:text-base text-ink/70 leading-7">
-                  Whether you are visiting for the first time
-                  or looking for a church family, we would be
-                  happy to welcome you and worship together.
-                </p>
-
-              </div>
-
-            </div>
+      <h2 className="font-display text-3xl sm:text-4xl font-semibold text-primary-dark">
+        You Are Always Welcome
+      </h2>
+    </div>
 
 
-            {/* IMAGE */}
+    {/* ================= MOBILE ================= */}
 
-            <div className="h-[300px] lg:h-[380px]">
+    <div
+      className="block lg:hidden rounded-3xl overflow-hidden shadow-card bg-white"
+      data-aos="fade-up"
+    >
 
-              <img
-                src="/gallery/join.jpg"
-                alt="Church fellowship"
-                className="w-full h-full object-cover"
-              />
+      {/* IMAGE */}
 
-            </div>
+      <div className="h-[300px] sm:h-[380px] w-full">
+        <img
+          src="/gallery/jo.jpg"
+          alt="Church fellowship"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
 
-          </div>
+
+      {/* MOBILE CONTENT */}
+
+      <div className="p-6 sm:p-8">
+
+        <h3 className="font-display text-2xl sm:text-3xl font-semibold text-primary-dark mb-5">
+          JOIN CHURCH
+        </h3>
+
+        <p className="text-sm sm:text-base text-ink/70 leading-7">
+          VICTORY A.G. CHURCH is a welcoming place where
+          people come together to worship Jesus Christ,
+          grow in faith, and encourage one another.
+        </p>
+
+        <p className="mt-4 text-sm sm:text-base text-ink/70 leading-7">
+          Whether you are visiting for the first time or
+          looking for a church family, you are always
+          welcome to join us in worship and fellowship.
+        </p>
+
+        <p className="mt-4 text-sm sm:text-base text-ink/70 leading-7">
+          Join us as we worship together, listen to God's
+          Word, pray together, and grow in our relationship
+          with Jesus Christ.
+        </p>
+
+        <p className="mt-4 text-sm sm:text-base text-ink/70 leading-7">
+          We look forward to welcoming you and your family
+          to VICTORY A.G. CHURCH.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* ================= DESKTOP ================= */}
+
+    <div
+      className="hidden lg:grid lg:grid-cols-2 rounded-3xl overflow-hidden shadow-card"
+      data-aos="fade-up"
+    >
+
+      {/* CONTENT */}
+
+      <div className="bg-white p-10 xl:p-6 flex items-center">
+
+        <div>
+
+          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-primary-dark mb-5">
+            JOIN CHURCH
+          </h3>
+
+          <p className="text-sm sm:text-base text-ink/70 leading-7">
+            VICTORY A.G. CHURCH is a place where people
+            come together to worship Jesus Christ, grow
+            in faith, and encourage one another. We believe
+            that the church is more than just a building;
+            it is a family where everyone is welcomed,
+            loved, and encouraged in their walk with God.
+          </p>
+
+          <p className="mt-4 text-sm sm:text-base text-ink/70 leading-7">
+            Whether you are visiting for the first time,
+            searching for a church family, or looking for
+            a place to grow deeper in your relationship
+            with Jesus, we would be happy to welcome you
+            into our fellowship.
+          </p>
+
+          <p className="mt-4 text-sm sm:text-base text-ink/70 leading-7">
+            Join us as we worship together, listen to
+            God's Word, spend time in prayer, and build
+            meaningful relationships with one another.
+            There is a place for you and your family here
+            at VICTORY A.G. CHURCH.
+          </p>
+
+          <p className="mt-4 text-sm sm:text-base text-ink/70 leading-7">
+            Come with an open heart and experience the
+            joy of worshipping Jesus Christ together.
+            We look forward to meeting you and sharing
+            God's love with you.
+          </p>
 
         </div>
-      </section>
+
+      </div>
+
+
+      {/* IMAGE */}
+
+      <div className="h-[460px]">
+
+        <img
+          src="/gallery/jo.jpg"
+          alt="Church fellowship"
+          className="w-full h-full object-cover object-center"
+        />
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 
       {/* ================= CONTACT US ================= */}
 
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-12 lg:py-10 bg-white">
 
         <div className="max-w-3xl mx-auto px-5 lg:px-10">
 
@@ -316,7 +390,7 @@ export default function Contact() {
           {/* CENTER FORM */}
 
           <div
-            className="bg-surface rounded-3xl p-6 sm:p-8 lg:p-10 shadow-card"
+            className="bg-surface rounded-3xl p-6 sm:p-8 lg:p-8 shadow-card"
             data-aos="fade-up"
           >
             <PrayerForm />

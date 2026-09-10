@@ -5,6 +5,10 @@ import { HiMenu, HiX } from "react-icons/hi";
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  {
+  to: "/ministries",
+  label: "Ministries"
+},
   { to: "/locations", label: "Locations" },
   { to: "/watch", label: "Watch" },
   { to: "/gallery", label: "Gallery" },
@@ -53,7 +57,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-lg py-3 border-b border-gray-100">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-lg py-2.5 border-b border-gray-100">
 
       {/* ================= NAVBAR ================= */}
 

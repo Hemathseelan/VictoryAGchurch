@@ -18,7 +18,7 @@ export default function About() {
         image="https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=2000&auto=format&fit=crop"
       />
 
-      <section className="py-20 lg:py-28 bg-white">
+   <section className="py-14 lg:py-14 bg-white">
         <div className="max-w-7xl mx-auto px-5 lg:px-10 grid md:grid-cols-3 gap-8">
           {values.map((v, i) => (
             <div key={v.title} data-aos="fade-up" data-aos-delay={i * 100} className="rounded-2xl bg-surface p-8 border border-primary/5">
@@ -30,13 +30,13 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-surface">
+      <section className="py-12 lg:py-10 bg-surface">
         <div className="max-w-4xl mx-auto px-5 lg:px-10">
           <div className="text-center mb-16" data-aos="fade-up">
             <p className="eyebrow mb-3">Our Journey</p>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-primary-dark">Church Timeline</h2>
           </div>
-          <div className="relative pl-8 border-l-2 border-gold/40 space-y-12">
+          <div className="relative pl-8 border-l-2 border-gold/40 space-y-12 lg:ml-48">
             {timeline.map((t, i) => (
               <div key={t.year} data-aos="fade-up" data-aos-delay={i * 100} className="relative">
                 <span className="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-gold border-4 border-white shadow-gold" />
@@ -49,15 +49,22 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-5 lg:px-10">
-          <div className="text-center mb-14" data-aos="fade-up">
-            <p className="eyebrow mb-3">Leadership</p>
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-primary-dark">Our Pastor</h2>
-          </div>
-          <PastorCard />
-        </div>
-      </section>
+    <section className="py-10 lg:py-10 bg-white">
+  <div className="max-w-6xl mx-auto px-5 lg:px-10">
+
+    <div className="text-center mb-14" data-aos="fade-up">
+      <p className="eyebrow mb-3">Leadership</p>
+      <h2 className="font-display text-3xl sm:text-4xl font-semibold text-primary-dark">
+        Our Pastor
+      </h2>
+    </div>
+
+    <div className="mt-1">
+      <PastorCard />
+    </div>
+
+  </div>
+</section>
     </>
   );
 }

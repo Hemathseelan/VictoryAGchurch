@@ -61,7 +61,7 @@ export default function MonthlyVerse() {
   }
 
   return (
-    <section className="py-16 lg:py-20 bg-cream relative overflow-hidden">
+<section className="pt-12 pb-4 lg:pt-10 lg:pb-6 bg-cream relative overflow-hidden">
       <div
         className="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10"
         data-aos="fade-up"
@@ -99,6 +99,7 @@ export default function MonthlyVerse() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="font-display text-xl sm:text-2xl lg:text-3xl leading-snug text-primary-dark"
+            style={{ wordSpacing: "6px" }}
           >
             "{monthlyVerse.tamilText}"
           </motion.blockquote>

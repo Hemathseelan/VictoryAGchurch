@@ -27,7 +27,7 @@ export default function YearlyVerse() {
   }
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-[#FAF7F0] via-[#FFFDF8] to-[#F4E9C9] overflow-hidden">
+    <section className="relative py-12 lg:py-10 bg-gradient-to-br from-[#FAF7F0] via-[#FFFDF8] to-[#F4E9C9] overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-yellow-300/20 rounded-full blur-3xl"></div>
@@ -40,7 +40,7 @@ export default function YearlyVerse() {
         <div className="bg-white rounded-[35px] shadow-2xl border border-yellow-200 overflow-hidden">
 
           {/* Header */}
-          <div className="text-center pt-12 pb-8 px-6">
+          <div className="text-center pt-10 pb-8 px-6">
 
             <div className="w-20 h-20 rounded-full bg-yellow-100 mx-auto flex items-center justify-center shadow-lg">
               <FaCross className="text-[#C89B3C]" size={30} />
@@ -58,16 +58,16 @@ export default function YearlyVerse() {
           </div>
 
           {/* Verse */}
-          <div className="grid lg:grid-cols-2">
+      <div className="grid grid-cols-2">
 
             {/* Tamil */}
-            <div className="p-10 lg:p-14 text-center border-b lg:border-b-0 lg:border-r border-yellow-200">
+          <div className="p-4 sm:p-6 lg:p-14 text-center border-r border-yellow-200">
 
               <p className="uppercase tracking-[4px] text-[#C89B3C] font-semibold text-sm mb-8">
                 தமிழ்
               </p>
 
-              <blockquote className="font-display text-2xl lg:text-3xl text-[#1E355E] leading-relaxed">
+              <blockquote className="font-display text-sm sm:text-xl lg:text-3xl text-[#1E355E] leading-[2]">
                 "{yearlyVerse.tamilText}"
               </blockquote>
 
@@ -79,13 +79,13 @@ export default function YearlyVerse() {
             </div>
 
             {/* English */}
-            <div className="p-10 lg:p-14 text-center">
+            <div className="p-4 sm:p-6 lg:p-14 text-center">
 
               <p className="uppercase tracking-[4px] text-[#C89B3C] font-semibold text-sm mb-8">
                 English
               </p>
 
-              <blockquote className="font-display text-2xl lg:text-3xl text-[#1E355E] leading-relaxed">
+              <blockquote className="font-display text-sm sm:text-xl lg:text-3xl text-[#1E355E] leading-relaxed">
                 "{yearlyVerse.englishText}"
               </blockquote>
 

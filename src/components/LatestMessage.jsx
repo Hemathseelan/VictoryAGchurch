@@ -199,7 +199,7 @@ const latestSermon = sermons.reduce((latest, sermon) => {
 
     //   </div>
     // </section>
-   <section className="py-12 sm:py-16 lg:py-24 bg-surface">
+   <section className="py-12 sm:py-16 lg:py-12 bg-surface">
   <div className="max-w-6xl mx-auto px-4 sm:px-5 lg:px-10">
 
     {/* Heading */}
@@ -277,45 +277,46 @@ const latestSermon = sermons.reduce((latest, sermon) => {
 
 
       {/* ================= MOBILE DETAILS ================= */}
-      <div className="block sm:hidden bg-primary p-5">
+  {/* ================= MOBILE DETAILS ================= */}
+<div className="block sm:hidden bg-[#E8EEFC] p-5">
 
-        <p className="eyebrow text-gold mb-2">
-          Sunday Message
-        </p>
+  <p className="eyebrow text-gold-deep mb-2">
+    Sunday Message
+  </p>
 
-        <h3 className="font-display text-xl font-semibold text-white leading-tight">
-          {latestSermon.title}
-        </h3>
+  <h3 className="font-display text-xl font-semibold text-primary-dark leading-snug">
+    {latestSermon.title}
+  </h3>
 
-        <div className="flex flex-wrap items-center gap-4 mt-3 text-white/70 text-xs">
+  <div className="flex flex-col gap-2 mt-4 text-primary-dark/70 text-xs">
 
-          <span className="flex items-center gap-1.5">
-            <FaUser size={10} />
-            {latestSermon.pastor}
-          </span>
+    <span className="flex items-center gap-2">
+      <FaUser size={11} className="text-gold-deep" />
+      <span>{latestSermon.pastor}</span>
+    </span>
 
-          <span className="flex items-center gap-1.5">
-            <FaCalendarDays size={10} />
-            {latestSermon.date}
-          </span>
+    <span className="flex items-center gap-2">
+      <FaCalendarDays size={11} className="text-gold-deep" />
+      <span>{latestSermon.date}</span>
+    </span>
 
-        </div>
+  </div>
 
-        <a
-          href={
-            videoId
-              ? `https://youtube.com/watch?v=${videoId}`
-              : latestSermon.youtubeUrl
-          }
-          target="_blank"
-          rel="noreferrer"
-          className="mt-5 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gold text-primary-dark font-semibold text-xs hover:bg-white transition-colors"
-        >
-          <FaPlay size={10} />
-          Watch Now
-        </a>
+  <a
+    href={
+      videoId
+        ? `https://youtube.com/watch?v=${videoId}`
+        : latestSermon.youtubeUrl
+    }
+    target="_blank"
+    rel="noreferrer"
+    className="mt-5 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gold text-primary-dark font-semibold text-sm hover:bg-white transition-colors shadow-gold"
+  >
+    <FaPlay size={10} />
+    Watch Now
+  </a>
 
-      </div>
+</div>
 
 
       {/* ================= DESKTOP DETAILS ================= */}
