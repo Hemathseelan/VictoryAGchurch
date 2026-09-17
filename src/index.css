@@ -117,27 +117,27 @@ h1, h2, h3, h4, .font-display {
   display: none;
 }
 
-
-
-
-
-/* =========================================
+/* =========================================================
    GALLERY COVERFLOW
-========================================= */
+========================================================= */
 
 .gallery-coverflow {
   width: 100%;
-  padding: 15px 0 45px;
+  padding: 20px 0 55px;
 }
 
-/* Every slide */
+
+/* =========================================================
+   SWIPER SLIDES
+========================================================= */
+
 .gallery-coverflow .swiper-slide {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  filter: blur(6px);
-  opacity: 0.45;
+  filter: blur(7px);
+  opacity: 0.42;
 
   transform: scale(0.78);
 
@@ -147,55 +147,120 @@ h1, h2, h3, h4, .font-display {
     transform 0.7s ease;
 }
 
-/* Center image */
+
+/* CENTER SLIDE */
 .gallery-coverflow .swiper-slide-active {
   filter: blur(0);
   opacity: 1;
+
   transform: scale(1);
 
   z-index: 10;
 }
 
-/* =========================================
-   IMAGE WRAPPER
-   Keeps original image ratio
-========================================= */
 
-.gallery-image-wrapper {
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.gallery-card {
   position: relative;
-
-  width: 100%;
-  max-width: 390px;
-
-  height: 560px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  width: fit-content;
+  height: fit-content;
+
+  margin: 0 auto;
+
   overflow: hidden;
 
-  border-radius: 24px;
+  background: transparent;
 
-  background: rgba(255, 255, 255, 0.45);
+  border-radius: 26px;
 
   box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.12);
+    0 18px 45px rgba(0, 0, 0, 0.12);
 }
 
-/* Image itself */
-.gallery-image {
-  width: 100%;
-  height: 100%;
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.gallery-photo {
+  display: block;
+
+  width: auto;
+  height: auto;
 
   object-fit: contain;
 
-  border-radius: 24px;
+  border-radius: 26px;
 
-  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-/* Bottom overlay */
+
+/* =========================================================
+   PORTRAIT IMAGE
+   Full image visible
+========================================================= */
+
+.gallery-card.is-portrait .gallery-photo {
+  max-height: 580px;
+  max-width: 390px;
+
+  height: auto;
+  width: auto;
+}
+
+
+/* =========================================================
+   LANDSCAPE IMAGE
+   Make it wide and large
+========================================================= */
+
+.gallery-card.is-landscape {
+  width: min(56vw, 760px);
+  max-width: 760px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-card.is-landscape .gallery-photo {
+  width: 100%;
+  max-width: 760px;
+
+  height: auto;
+  max-height: 580px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.gallery-card.is-landscape .gallery-photo {
+  display: block;
+
+  width: 100%;
+  max-width: 760px;
+
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+}
+/* =========================================================
+   OVERLAY
+========================================================= */
+
 .gallery-overlay {
   position: absolute;
 
@@ -203,96 +268,140 @@ h1, h2, h3, h4, .font-display {
   right: 0;
   bottom: 0;
 
-  padding: 35px 20px 18px;
+  padding: 48px 20px 18px;
 
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.7),
-    transparent
+    rgba(0, 0, 0, 0.72),
+    rgba(0, 0, 0, 0)
   );
 
-  opacity: 1;
+  border-radius: 0 0 26px 26px;
+
+  pointer-events: none;
 }
 
-/* =========================================
+
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 639px) {
 
   .gallery-coverflow {
-    padding-top: 10px;
-    padding-bottom: 40px;
+    padding: 10px 0 45px;
   }
 
   .gallery-coverflow .swiper-slide {
     filter: blur(5px);
     opacity: 0.4;
+
     transform: scale(0.78);
   }
 
   .gallery-coverflow .swiper-slide-active {
     filter: blur(0);
     opacity: 1;
+
     transform: scale(1);
   }
 
-  .gallery-image-wrapper {
-    height: 500px;
-    max-width: 290px;
 
+  /* Portrait */
+  .gallery-card.is-portrait .gallery-photo {
+    max-width: 78vw;
+    max-height: 500px;
+  }
+
+
+  /* Landscape */
+  .gallery-card.is-landscape {
+    width: 88vw;
+    max-width: 88vw;
+  }
+
+  .gallery-card.is-landscape .gallery-photo {
+    width: 88vw;
+    max-width: 88vw;
+
+    height: auto;
+    max-height: 430px;
+  }
+
+
+  .gallery-card {
     border-radius: 22px;
   }
 
-  .gallery-image {
+  .gallery-photo {
     border-radius: 22px;
+  }
+
+  .gallery-overlay {
+    padding: 40px 16px 14px;
+    border-radius: 0 0 22px 22px;
   }
 }
 
-/* =========================================
+
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
 @media (min-width: 640px) and (max-width: 1023px) {
 
-  .gallery-image-wrapper {
-    height: 560px;
-    max-width: 330px;
+  /* Portrait */
+  .gallery-card.is-portrait .gallery-photo {
+    max-width: 340px;
+    max-height: 560px;
+  }
+
+
+  /* Landscape */
+  .gallery-card.is-landscape {
+    width: min(68vw, 600px);
+    max-width: 600px;
+  }
+
+  .gallery-card.is-landscape .gallery-photo {
+    width: 100%;
+    max-width: 600px;
+
+    height: auto;
   }
 }
 
-/* =========================================
+
+/* =========================================================
    DESKTOP
-========================================= */
+========================================================= */
 
 @media (min-width: 1024px) {
 
   .gallery-coverflow {
     padding-top: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 55px;
   }
 
-  .gallery-coverflow .swiper-slide {
-    filter: blur(7px);
-    opacity: 0.42;
-    transform: scale(0.78);
+
+  /* Portrait */
+  .gallery-card.is-portrait .gallery-photo {
+    max-width: 400px;
+    max-height: 580px;
   }
 
-  .gallery-coverflow .swiper-slide-active {
-    filter: blur(0);
-    opacity: 1;
-    transform: scale(1);
+
+  /* Landscape */
+  .gallery-card.is-landscape {
+    width: min(56vw, 760px);
+    max-width: 760px;
   }
 
-  .gallery-image-wrapper {
-    height: 580px;
-    max-width: 390px;
+  .gallery-card.is-landscape .gallery-photo {
+    width: 100%;
+    max-width: 760px;
 
-    border-radius: 26px;
+    height: auto;
+    max-height: 580px;
   }
-
-  .gallery-image {
-    border-radius: 26px;
-  }
-
 }

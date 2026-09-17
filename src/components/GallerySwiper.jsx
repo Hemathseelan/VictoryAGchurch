@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
@@ -8,21 +9,35 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 const galleryImages = [
-  "/gallery/church1.jpg",
-  "/gallery/join.jpg",
+  "/gallery/jo.jpg",
+  "/gallery/hero.jpg",
   "/gallery/joinus.jpg",
   "/gallery/ss1.jpg",
   "/gallery/ss2.jpg",
   "/gallery/sse1.jpg",
-  "/gallery/hero.jpg",
-  "/gallery/your-image.jpg",
+  "/gallery/work.jpeg",
+  "/gallery/media.jpeg",
 ];
 
 export default function GallerySwiper() {
+  const [orientations, setOrientations] = useState({});
+
+  const handleImageLoad = (e, index) => {
+    const { naturalWidth, naturalHeight } = e.target;
+
+    setOrientations((prev) => ({
+      ...prev,
+      [index]:
+        naturalWidth > naturalHeight
+          ? "landscape"
+          : "portrait",
+    }));
+  };
+
   return (
     <section className="relative overflow-hidden bg-[#FFF9ED] py-14 sm:py-16 lg:py-20">
 
-      {/* Heading */}
+      {/* ================= HEADING ================= */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 mb-8 sm:mb-10">
         <div className="text-center">
 
@@ -41,7 +56,7 @@ export default function GallerySwiper() {
         </div>
       </div>
 
-      {/* Gallery Slider */}
+      {/* ================= SWIPER ================= */}
       <div className="w-full overflow-hidden">
 
         <Swiper
@@ -54,25 +69,22 @@ export default function GallerySwiper() {
           centeredSlides={true}
 
           breakpoints={{
-            // Mobile
             0: {
-              slidesPerView: 1.8,
+              slidesPerView: 1.65,
             },
 
-            // Tablet
             640: {
-              slidesPerView: 2.5,
+              slidesPerView: 2.2,
             },
 
-            // Desktop
             1024: {
-              slidesPerView: 3,
+              slidesPerView: 2.6,
             },
           }}
 
-          spaceBetween={15}
+          spaceBetween={18}
           loop={true}
-          speed={800}
+          speed={850}
 
           coverflowEffect={{
             rotate: 0,
@@ -94,40 +106,54 @@ export default function GallerySwiper() {
           className="gallery-coverflow"
         >
 
-          {galleryImages.map((image, index) => (
-            <SwiperSlide key={image}>
+          {galleryImages.map((image, index) => {
+            const orientation = orientations[index];
 
-              {/* Image wrapper */}
-              <div className="gallery-image-wrapper">
+            return (
+              <SwiperSlide key={image}>
 
-                <img
-                  src={image}
-                  alt={`Victory A.G. Church Gallery ${index + 1}`}
-                  className="gallery-image"
-                />
+                <div
+                  className={`gallery-card ${
+                    orientation === "landscape"
+                      ? "is-landscape"
+                      : orientation === "portrait"
+                      ? "is-portrait"
+                      : "is-loading"
+                  }`}
+                >
 
-                {/* Bottom overlay only on center image */}
-                <div className="gallery-overlay">
-                  <p className="text-white/70 text-xs tracking-[0.2em] uppercase">
-                    Gallery
-                  </p>
+                  <img
+                    src={image}
+                    alt={`Victory A.G. Church Gallery ${index + 1}`}
+                    className="gallery-photo"
+                    onLoad={(e) => handleImageLoad(e, index)}
+                  />
 
-                  <p className="text-white font-semibold text-lg">
-                    {String(index + 1).padStart(2, "0")}
-                  </p>
+                  {/* Image bottom info */}
+                  <div className="gallery-overlay">
+
+                    <p className="text-white/75 text-xs tracking-[0.2em] uppercase">
+                      Gallery
+                    </p>
+
+                    <p className="text-white font-semibold text-lg">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+
+                  </div>
+
                 </div>
 
-              </div>
-
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            );
+          })}
 
         </Swiper>
 
       </div>
 
-      {/* View Gallery */}
-      <div className="flex justify-center mt-9">
+      {/* ================= VIEW GALLERY ================= */}
+      <div className="flex justify-center mt-8 sm:mt-10">
 
         <Link
           to="/gallery"
