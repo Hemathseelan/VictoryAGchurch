@@ -86,11 +86,9 @@ export const ministries = [
   { id: 2, title: "Youth Fellowship", icon: "FaFire", desc: "Raising a passionate generation on fire for Christ." },
   { id: 3, title: "Women's Fellowship", icon: "FaFemale", desc: "Building strong women of faith, hope and love." },
   { id: 4, title: "Men's Fellowship", icon: "FaMale", desc: "Equipping men to lead their homes and communities." },
-  { id: 5, title: "Children Ministry", icon: "FaChild", desc: "Nurturing little hearts in the love of Jesus." },
-  { id: 6, title: "Sunday School", icon: "FaBookReader", desc: "Foundational biblical teaching for every age." },
-  { id: 7, title: "Choir", icon: "FaMusic", desc: "Leading the congregation into heartfelt worship." },
-  { id: 8, title: "Evangelism", icon: "FaHandsHelping", desc: "Carrying the Gospel beyond our walls." },
-  { id: 9, title: "Bible Study", icon: "FaBible", desc: "Digging deeper into God's Word together." },
+ 
+  { id: 5, title: "Sunday School", icon: "FaBookReader", desc: "Foundational biblical teaching for every age." },
+  { id: 6, title: "Media Ministry", icon: "FaVideo", desc: "Spreading the Gospel through modern media platforms." },
 ];
 
 export const services = [
@@ -114,7 +112,7 @@ mapLink:
   },
   {
     id: 2,
-    name: "AG Prayer House",
+    name: "AG Branch Church",
     address: "28, Annai Moogambigai Nagar, Koothapakkam, Cuddalore, Tamil Nadu",
     phone: "+91 998654 73252",
      iframe:

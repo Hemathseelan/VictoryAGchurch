@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { FaPaperPlane } from "react-icons/fa6";
 
 export default function PrayerForm() {
@@ -10,6 +11,7 @@ export default function PrayerForm() {
   });
 
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,8 +34,14 @@ export default function PrayerForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Name validation
+    if (form.name.trim() === "") {
+      alert("Please enter your name.");
+      return;
+    }
 
     // Phone validation
     if (!/^\d{10}$/.test(form.phone)) {
@@ -50,28 +58,48 @@ export default function PrayerForm() {
       return;
     }
 
-    // Name validation
-    if (form.name.trim() === "") {
-      alert("Please enter your name.");
-      return;
-    }
-
     // Prayer request validation
     if (form.request.trim() === "") {
       alert("Please enter your prayer request.");
       return;
     }
 
-    setSent(true);
+    try {
+      setSending(true);
 
-    setForm({
-      name: "",
-      phone: "",
-      email: "",
-      request: "",
-    });
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          phone: form.phone,
+          email: form.email || "Not provided",
+          request: form.request,
+        },
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
+      );
 
-    setTimeout(() => setSent(false), 4000);
+      setSent(true);
+
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        request: "",
+      });
+
+      setTimeout(() => setSent(false), 4000);
+    } catch (error) {
+  console.error("EmailJS Error:", error);
+  console.error("Status:", error.status);
+  console.error("Text:", error.text);
+
+  alert(`Email failed: ${error.text || "Unknown error"}`);
+}finally {
+      setSending(false);
+    }
   };
 
   const inputClass =
@@ -90,7 +118,6 @@ export default function PrayerForm() {
       </h3>
 
       <div className="space-y-5">
-
         {/* Name */}
         <div>
           <label className="text-sm font-medium text-ink/70 mb-2 block">
@@ -109,7 +136,6 @@ export default function PrayerForm() {
 
         {/* Phone + Email */}
         <div className="grid sm:grid-cols-2 gap-5">
-
           {/* Phone */}
           <div>
             <label className="text-sm font-medium text-ink/70 mb-2 block">
@@ -145,7 +171,6 @@ export default function PrayerForm() {
               placeholder="you@example.com"
             />
           </div>
-
         </div>
 
         {/* Prayer Request */}
@@ -168,10 +193,12 @@ export default function PrayerForm() {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-primary text-white font-semibold hover:bg-primary-dark transition-colors"
+          disabled={sending}
+          className="w-full flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-primary text-white font-semibold hover:bg-primary-dark transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
         >
           <FaPaperPlane size={14} />
-          Submit Request
+
+          {sending ? "Sending..." : "Submit Request"}
         </button>
 
         {/* Success Message */}
@@ -181,7 +208,6 @@ export default function PrayerForm() {
             you. 🙏
           </p>
         )}
-
       </div>
     </form>
   );

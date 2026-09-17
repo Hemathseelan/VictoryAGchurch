@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaPlay, FaClock } from "react-icons/fa6";
 
+import { FaChurch } from "react-icons/fa6";
 import { churchInfo, services } from "../data/siteData";
 
 export default function Hero() {
@@ -32,25 +33,23 @@ export default function Hero() {
       {/* ================= HERO IMAGE ================= */}
       {/* ================= HERO IMAGE ================= */}
 
-{/* Desktop - existing image unchanged */}
-<img
-  src="/gallery/hero.jpg"
-  alt="Congregation worshipping together"
-  className="absolute inset-0 w-full h-full object-cover object-center hidden sm:block"
+{/* Hero Video - Desktop + Mobile */}
+<video 
+  src="/gallery/hero.mp4" 
+  autoPlay 
+  muted 
+  loop 
+  playsInline 
+  preload="auto" 
+  aria-label="Congregation worshipping together" 
+  className="absolute inset-0 w-full h-full object-cover object-center"
 />
 
-{/* Mobile - 5 images with smooth transformation */}
-<img
-  key={mobileImageIndex}
-  src={mobileHeroImages[mobileImageIndex]}
-  alt="Congregation worshipping together"
-  className="absolute inset-0 w-full h-full object-cover object-center block sm:hidden animate-mobile-hero"
-/>
-
-      <div className="absolute inset-0 bg-primary-dark/40" />
+{/* Overlay */}
+<div className="absolute inset-0 bg-primary-dark/40" />
 
       {/* Signature radiant motif */}
-      <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-radiant animate-sunray" />
+<div className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gold/10 blur-3xl" />
 
 
 
@@ -105,7 +104,7 @@ export default function Hero() {
         </motion.div>
 
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
@@ -120,7 +119,21 @@ export default function Hero() {
             Watch Latest Service
           </a>
 
-        </motion.div>
+        </motion.div> */}
+        <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.45 }}
+  className="flex flex-wrap gap-4 mt-10"
+>
+  <a
+    href="/locations"
+    className="flex items-center gap-2 px-5 py-2.5 sm:gap-3 sm:px-7 sm:py-3.5 rounded-full bg-gold text-primary-dark font-semibold text-sm sm:text-base shadow-gold hover:bg-white transition-colors"
+  >
+    <FaChurch size={14} />
+    Join Us This Sunday
+  </a>
+</motion.div>
 
       </div>
 

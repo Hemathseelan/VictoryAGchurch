@@ -10,7 +10,7 @@ const links = [
   label: "Ministries"
 },
   { to: "/locations", label: "Locations" },
-  { to: "/watch", label: "Watch" },
+  // { to: "/watch", label: "Watch" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
 ];

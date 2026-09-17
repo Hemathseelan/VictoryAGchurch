@@ -1,6 +1,6 @@
 import Hero from "../components/Hero";
 import MonthlyVerse from "../components/MonthlyVerse";
-import LatestMessage from "../components/LatestMessage";
+// import LatestMessage from "../components/LatestMessage";
 import MinistryCard from "../components/MinistryCard";
 import ServiceCard from "../components/ServiceCard";
 import PosterSlider from "../components/PosterSlider";
@@ -8,6 +8,8 @@ import GalleryPreview from "../components/GalleryPreview";
 import YearlyVerse from "../components/YearlyVerse";
 import PreviousMonthlyVerses from "../components/PreviousMonthlyVerses";
 import { ministries, services } from "../data/siteData";
+import PersonalVerse from "../components/PersonalVerse";
+import GallerySwiper from "../components/GallerySwiper";
 
 export default function Home() {
   return (
@@ -28,8 +30,8 @@ export default function Home() {
       </section>
       <MonthlyVerse />
       <PreviousMonthlyVerses />
-      <LatestMessage />
-
+      {/* <LatestMessage /> */}
+<GallerySwiper />
       <section className="py-8 lg:py-8 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="text-center mb-8" data-aos="fade-up">
@@ -46,6 +48,7 @@ export default function Home() {
 
  
       <YearlyVerse />
+      <PersonalVerse />
     </>
   );
 }

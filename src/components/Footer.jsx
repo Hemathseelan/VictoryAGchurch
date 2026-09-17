@@ -13,13 +13,13 @@ import { churchInfo, services } from "../data/siteData";
 const quickLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-   { to: "/watch", label: "Watch" },
+  //  { to: "/watch", label: "Watch" },
    {
   to: "/ministries",
   label: "Ministries"
 },
    { to: "/locations", label: "Locations" },
-   { to: "/watch", label: "Watch" },
+  //  { to: "/watch", label: "Watch" },
   { to: "/gallery", label: "Gallery" },
  
  

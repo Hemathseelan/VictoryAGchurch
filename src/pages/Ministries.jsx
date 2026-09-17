@@ -12,254 +12,269 @@ import {
 
 import { GiPrayerBeads } from "react-icons/gi";
 
+/**
+ * NOTE ON IMAGES
+ * Each ministry below has an `image` field with a placeholder photo
+ * (picsum.photos, seeded so it stays consistent on reload). Swap these
+ * for real photos of your congregation — actual faces and gatherings
+ * from VICTORY A.G. CHURCH will read as far more credible and warm
+ * than any stock photography. Recommended size: 1200x900 or larger,
+ * landscape orientation, ideally in .jpg or .webp.
+ */
 const ministryDetails = [
   {
+    id: "prayer",
     title: "Prayer Ministry",
     icon: GiPrayerBeads,
+    image: "https://picsum.photos/seed/victory-prayer/1200/900",
+    imageAlt: "Congregation members gathered in prayer",
+
     intro:
-      "Prayer is at the heart of everything we do at VICTORY A.G. CHURCH. Our Prayer Ministry is committed to seeking God through prayer, intercession and fasting. We believe that prayer strengthens believers, brings the church together and opens the way for God's will to be accomplished.",
+      "Prayer is at the heart of everything we do at VICTORY A.G. CHURCH. We seek God through prayer, intercession and fasting, believing that prayer strengthens believers and brings the church together.",
 
     whatWeDo:
-      "We gather together to pray for the church, families, individuals, our city and our nation. Through prayer meetings, intercession and special seasons of fasting and prayer, we stand together in faith and seek God's guidance, protection and blessing.",
+      "We pray for the church, families, individuals, our city and our nation through prayer meetings, intercession and special seasons of prayer.",
 
     purpose:
-      "Our purpose is to build a strong culture of prayer within the church and encourage every believer to develop a consistent personal prayer life. We desire to see people experience God's presence and become prayer warriors who faithfully stand in the gap for others.",
+      "Our purpose is to build a strong culture of prayer and encourage every believer to develop a consistent personal prayer life.",
 
     vision:
-      "Our vision is to become a praying church where people continually seek God, trust His Word and depend on Him in every situation. We desire prayer to be a strong foundation for every believer and every ministry of the church.",
+      "Our vision is to become a praying church where people continually seek God, trust His Word and depend on Him in every situation.",
   },
 
   {
+    id: "youth",
     title: "Youth Fellowship",
     icon: FaFire,
+    image: "https://picsum.photos/seed/victory-youth/1200/900",
+    imageAlt: "Young people worshipping together at youth fellowship",
+
     intro:
-      "The Youth Fellowship at VICTORY A.G. CHURCH exists to encourage young people to know Jesus Christ personally and live boldly for Him. We believe young people are an important part of the church today and that God has a unique purpose for every young life.",
+      "The Youth Fellowship encourages young people to know Jesus Christ personally and live boldly for Him. We believe every young person has a unique purpose and an important place in God's plan.",
 
     whatWeDo:
-      "Our youth fellowship provides opportunities for worship, prayer, Bible study and meaningful fellowship. We also encourage young people to participate in outreach programs, special gatherings and activities that help them discover and use their God-given gifts.",
+      "We provide opportunities for worship, prayer, Bible study, fellowship and outreach while helping young people discover and use their God-given gifts.",
 
     purpose:
-      "Our purpose is to help young people build a strong foundation in Christ and develop lives that reflect biblical values. We encourage them to make wise choices, grow in faith and become positive influences among their friends, families and communities.",
+      "Our purpose is to help young people build a strong foundation in Christ, grow in faith and live according to biblical values.",
 
     vision:
-      "Our vision is to raise a passionate generation that is on fire for Christ, rooted in God's Word and ready to serve Him. We desire to see young men and women become faithful disciples, leaders and witnesses for Jesus Christ.",
+      "Our vision is to raise a passionate generation rooted in God's Word and ready to serve, lead and witness for Jesus Christ.",
   },
 
   {
+    id: "women",
     title: "Women's Fellowship",
     icon: FaPersonDress,
+    image: "https://picsum.photos/seed/victory-women/1200/900",
+    imageAlt: "Women gathered for fellowship and Bible study",
+
     intro:
-      "The Women's Fellowship is a place where women come together in faith, prayer, fellowship and encouragement. We believe every woman has a valuable place in God's purpose and can make a meaningful difference in her family, church and community.",
+      "The Women's Fellowship brings women together in faith, prayer, fellowship and encouragement. We believe every woman has a valuable place in God's purpose and can make a difference in her family and community.",
 
     whatWeDo:
-      "Through prayer meetings, Bible studies, fellowship gatherings and special programs, women are encouraged to grow spiritually and support one another. We create opportunities for women to share, encourage each other and serve God together.",
+      "Through prayer meetings, Bible studies, fellowship gatherings and special programs, women grow spiritually and encourage one another.",
 
     purpose:
-      "Our purpose is to strengthen women in their relationship with Jesus Christ and help them grow in wisdom, faith, love and service. We encourage women to become godly examples in their homes and communities.",
+      "Our purpose is to strengthen women in their relationship with Jesus Christ and help them grow in wisdom, faith, love and service.",
 
     vision:
-      "Our vision is to build a strong community of women who walk faithfully with Christ, encourage one another and influence their families and society through God's love. We desire to see women become prayerful and committed followers of Jesus.",
+      "Our vision is to build a strong community of women who walk faithfully with Christ and influence their families and communities through God's love.",
   },
 
   {
+    id: "men",
     title: "Men's Fellowship",
     icon: FaPerson,
+    image: "https://picsum.photos/seed/victory-men/1200/900",
+    imageAlt: "Men gathered together for fellowship",
+
     intro:
-      "The Men's Fellowship provides a place for men to grow together in faith, friendship and spiritual maturity. We believe godly men have an important role in strengthening their families, serving the church and making a positive impact in their communities.",
+      "The Men's Fellowship provides a place for men to grow together in faith, friendship and spiritual maturity. We believe godly men have an important role in strengthening their families and serving the church.",
 
     whatWeDo:
-      "Our fellowship includes prayer, Bible study, discussions, fellowship gatherings and opportunities to serve. We encourage men to support one another, share their experiences and grow together through God's Word.",
+      "Our fellowship includes prayer, Bible study, discussions, fellowship gatherings and opportunities to serve God and support one another.",
 
     purpose:
-      "Our purpose is to equip men to become responsible, faithful and godly leaders in their homes, workplaces, church and communities. We encourage men to develop strong character and live their daily lives according to biblical principles.",
+      "Our purpose is to equip men to become responsible, faithful and godly leaders in their homes, church and communities.",
 
     vision:
-      "Our vision is to raise men who love God, lead with integrity and serve others with humility. We desire to see strong Christian men who become examples of faith and godly leadership wherever God has placed them.",
+      "Our vision is to raise men who love God, lead with integrity and serve others with humility wherever God has placed them.",
   },
 
   {
+    id: "children",
     title: "Children Ministry",
     icon: FaChild,
+    image: "https://picsum.photos/seed/victory-children/1200/900",
+    imageAlt: "Children learning together at church",
+
     intro:
-      "The Children Ministry is dedicated to helping children know and love Jesus from an early age. We believe every child is precious to God and that childhood is an important season for building a strong foundation of faith.",
+      "The Children Ministry helps children know and love Jesus from an early age. We believe every child is precious to God and that childhood is an important season for building a strong foundation of faith.",
 
     whatWeDo:
-      "Children are taught God's Word through Bible stories, worship, prayer, Scripture memory and age-appropriate activities. We seek to create a joyful and safe environment where children can learn about Jesus and enjoy fellowship with one another.",
+      "Children learn God's Word through Bible stories, worship, prayer, Scripture memory and age-appropriate activities in a joyful and safe environment.",
 
     purpose:
-      "Our purpose is to nurture children spiritually and help them understand God's love, His Word and His plan for their lives. We encourage children to pray, worship God and develop values based on Scripture.",
+      "Our purpose is to nurture children spiritually and help them understand God's love, His Word and His plan for their lives.",
 
     vision:
-      "Our vision is to raise children who know Jesus personally, love God's Word and grow into faithful followers of Christ. We pray that every child will develop a strong faith that continues throughout their lives.",
+      "Our vision is to raise children who know Jesus, love God's Word and grow into faithful followers of Christ throughout their lives.",
   },
 
   {
+    id: "sunday-school",
     title: "Sunday School",
     icon: FaBookOpenReader,
+    image: "https://picsum.photos/seed/victory-sundayschool/1200/900",
+    imageAlt: "Bible study class in session",
+
     intro:
-      "Sunday School is an important teaching ministry of VICTORY A.G. CHURCH that helps believers understand the Bible and grow in their knowledge of God's Word. It provides biblical teaching suited to different age groups and stages of spiritual growth.",
+      "Sunday School helps believers understand the Bible and grow in their knowledge of God's Word. It provides biblical teaching suited to different age groups and stages of spiritual growth.",
 
     whatWeDo:
-      "Through regular Bible lessons, Scripture study, discussions and practical teaching, we help children, young people and adults understand biblical truths. Sunday School encourages learners to ask questions and apply God's Word to their everyday lives.",
+      "Through Bible lessons, Scripture study, discussions and practical teaching, we help believers understand and apply God's Word to everyday life.",
 
     purpose:
-      "Our purpose is to establish believers on the foundation of God's Word and help them develop a deeper understanding of Scripture. We believe biblical knowledge should lead to a transformed life and faithful Christian living.",
+      "Our purpose is to establish believers on the foundation of God's Word and help them develop a deeper understanding of Scripture.",
 
     vision:
-      "Our vision is to see every generation become rooted and established in God's Word. We desire to develop believers who know Scripture, understand God's truth and confidently live according to His principles.",
+      "Our vision is to see every generation rooted and established in God's Word, living confidently according to His truth.",
   },
 
-  {
-    title: "Choir",
-    icon: FaMusic,
-    intro:
-      "The Choir Ministry serves the church through music and worship, helping lead the congregation into heartfelt praise and worship of God. We believe music is a beautiful gift from God and an important expression of our faith.",
 
-    whatWeDo:
-      "The choir participates in worship services, special church programs and celebrations. Members spend time developing their musical gifts, practicing together and preparing songs that encourage the congregation to focus on God and His goodness.",
 
-    purpose:
-      "Our purpose is not simply to sing but to worship God sincerely and help others enter into an atmosphere of praise. We encourage every choir member to use their musical gifts with humility, discipline and a heart that seeks God's glory.",
 
-    vision:
-      "Our vision is to build a worship ministry that brings glory to God and encourages people through Christ-centered music. We desire every song and every voice to point people toward Jesus and inspire genuine worship.",
-  },
 
-  {
-    title: "Evangelism",
-    icon: FaHandshakeAngle,
-    intro:
-      "The Evangelism Ministry carries the Gospel of Jesus Christ beyond the walls of the church. We believe every believer has a responsibility to share God's love and the good news of salvation with others.",
-
-    whatWeDo:
-      "We reach out to people through personal evangelism, community outreach, prayer outreach and opportunities to share the Gospel. We seek to meet people where they are, demonstrate God's love and introduce them to the hope found in Jesus Christ.",
-
-    purpose:
-      "Our purpose is to fulfill the Great Commission by sharing the message of Jesus and helping people take their first steps toward faith. We desire to reach individuals and families with compassion, truth and the love of Christ.",
-
-    vision:
-      "Our vision is to become a church that actively reaches the lost and carries the Gospel into our city and beyond. We pray to see lives transformed, families restored and people brought into a growing relationship with Jesus Christ.",
-  },
-
-  {
-    title: "Bible Study",
-    icon: FaBookBible,
-    intro:
-      "The Bible Study Ministry provides an opportunity for believers to study God's Word together in a deeper and more meaningful way. We believe that understanding Scripture is essential for spiritual growth and for living a Christ-centered life.",
-
-    whatWeDo:
-      "Bible Study includes Scripture reading, teaching, discussion and opportunities to explore biblical topics and practical Christian living. Participants are encouraged to ask questions, learn together and discover how God's Word applies to everyday situations.",
-
-    purpose:
-      "Our purpose is to help believers develop a deeper understanding of Scripture and build their lives on biblical truth. We want every participant to grow in knowledge, faith and spiritual maturity through the study of God's Word.",
-
-    vision:
-      "Our vision is to see believers become deeply rooted in Scripture and confident in their faith. We desire a church where God's Word shapes our thoughts, decisions, relationships and daily lives.",
-  },
 ];
 
 export default function Ministries() {
   return (
     <main className="bg-surface">
-
       {/* Hero */}
       <section className="relative py-20 sm:py-24 lg:py-28 bg-primary-dark overflow-hidden">
         <div className="absolute inset-0 bg-navy-gradient" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-10 text-center">
-          <p className="eyebrow text-gold mb-3">
-            VICTORY A.G. CHURCH
-          </p>
+          <p className="eyebrow text-gold mb-3">VICTORY A.G. CHURCH</p>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
             Our Ministries
           </h1>
 
           <p className="mt-4 max-w-2xl mx-auto text-white/70 text-sm sm:text-base leading-7">
-            Serving God, strengthening people and sharing the love of
-            Jesus Christ through every ministry.
+            Serving God, strengthening people and sharing the love of Jesus
+            Christ through every ministry.
           </p>
         </div>
       </section>
 
-      {/* Ministry Details */}
-      <section className="py-12 sm:py-16 lg:py-20">
-        <div className="max-w-5xl mx-auto px-5 lg:px-10">
+      {/* Quick navigation */}
+      <nav
+        aria-label="Jump to a ministry"
+        className="sticky top-0 z-20 bg-surface/95 backdrop-blur border-b border-primary/10"
+      >
+        <div className="max-w-7xl mx-auto px-5 lg:px-10">
+          <ul className="flex gap-2 overflow-x-auto py-3 scrollbar-hide">
+            {ministryDetails.map((ministry) => (
+              <li key={ministry.id} className="shrink-0">
+                <a
+                  href={`#${ministry.id}`}
+                  className="inline-flex items-center rounded-full border border-primary/15 px-4 py-1.5 text-sm text-ink/70 hover:border-primary/40 hover:text-primary-dark transition-colors"
+                >
+                  {ministry.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
 
+      {/* Ministry Details */}
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 space-y-20 sm:space-y-24 lg:space-y-28">
           {ministryDetails.map((ministry, index) => {
             const Icon = ministry.icon;
+            const imageOnRight = index % 2 === 1;
 
             return (
               <article
-                key={ministry.title}
+                key={ministry.id}
+                id={ministry.id}
                 data-aos="fade-up"
-                className={index !== 0 ? "mt-14 sm:mt-16 lg:mt-20" : ""}
+                className="scroll-mt-20"
               >
+                <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                  {/* Image */}
+                  <div
+                    className={`lg:col-span-5 ${
+                      imageOnRight ? "lg:order-2" : "lg:order-1"
+                    }`}
+                  >
+                    <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
+                      <img
+                        src={ministry.image}
+                        alt={ministry.imageAlt}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/30 via-transparent to-transparent" />
 
-                {/* Ministry Heading */}
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-primary/5 flex items-center justify-center shrink-0">
-                    <Icon
-                      className="text-primary"
-                      size={22}
-                    />
+                      <div className="absolute bottom-4 left-4 w-12 h-12 rounded-2xl bg-white/95 backdrop-blur flex items-center justify-center shadow-md">
+                        <Icon className="text-primary" size={22} />
+                      </div>
+                    </div>
                   </div>
 
-                  <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold text-primary-dark">
-                    {ministry.title}
-                  </h2>
+                  {/* Content */}
+                  <div
+                    className={`lg:col-span-7 ${
+                      imageOnRight ? "lg:order-1" : "lg:order-2"
+                    }`}
+                  >
+                    <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold text-primary-dark">
+                      {ministry.title}
+                    </h2>
+
+                    <p className="mt-4 text-ink/70 text-sm sm:text-base leading-7 sm:leading-8">
+                      {ministry.intro}
+                    </p>
+
+                    <dl className="mt-7 space-y-5 border-l-2 border-gold/40 pl-5 sm:pl-6">
+                      <div>
+                        <dt className="font-display text-base sm:text-lg font-semibold text-primary-dark">
+                          What We Do
+                        </dt>
+                        <dd className="mt-1.5 text-ink/70 text-sm sm:text-base leading-7">
+                          {ministry.whatWeDo}
+                        </dd>
+                      </div>
+
+                      <div>
+                        <dt className="font-display text-base sm:text-lg font-semibold text-primary-dark">
+                          Our Purpose
+                        </dt>
+                        <dd className="mt-1.5 text-ink/70 text-sm sm:text-base leading-7">
+                          {ministry.purpose}
+                        </dd>
+                      </div>
+
+                      <div>
+                        <dt className="font-display text-base sm:text-lg font-semibold text-primary-dark">
+                          Our Vision
+                        </dt>
+                        <dd className="mt-1.5 text-ink/70 text-sm sm:text-base leading-7">
+                          {ministry.vision}
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
                 </div>
-
-                {/* Introduction */}
-                <p className="text-ink/70 text-sm sm:text-base leading-7 sm:leading-8 text-justify">
-                  {ministry.intro}
-                </p>
-
-                {/* What We Do */}
-                <div className="mt-7">
-                  <h3 className="font-display text-lg sm:text-xl font-semibold text-primary-dark mb-2">
-                    What We Do
-                  </h3>
-
-                  <p className="text-ink/70 text-sm sm:text-base leading-7 sm:leading-8 text-justify">
-                    {ministry.whatWeDo}
-                  </p>
-                </div>
-
-                {/* Purpose */}
-                <div className="mt-6">
-                  <h3 className="font-display text-lg sm:text-xl font-semibold text-primary-dark mb-2">
-                    Our Purpose
-                  </h3>
-
-                  <p className="text-ink/70 text-sm sm:text-base leading-7 sm:leading-8 text-justify">
-                    {ministry.purpose}
-                  </p>
-                </div>
-
-                {/* Vision */}
-                <div className="mt-6">
-                  <h3 className="font-display text-lg sm:text-xl font-semibold text-primary-dark mb-2">
-                    Our Vision
-                  </h3>
-
-                  <p className="text-ink/70 text-sm sm:text-base leading-7 sm:leading-8 text-justify">
-                    {ministry.vision}
-                  </p>
-                </div>
-
-                {/* Divider */}
-                {index !== ministryDetails.length - 1 && (
-                  <div className="mt-12 sm:mt-14 border-b border-primary/10" />
-                )}
-
               </article>
             );
           })}
-
         </div>
       </section>
-
     </main>
   );
 }
